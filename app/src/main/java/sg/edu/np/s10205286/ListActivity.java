@@ -17,7 +17,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class ListActivity extends AppCompatActivity {
-    static ArrayList<User> userList = new ArrayList<User>();
+    static ArrayList<User> userList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class ListActivity extends AppCompatActivity {
             userList.add(new User(name, description, i, temp.nextBoolean()));
         }
 
-        RecyclerView rv = findViewById(R.id.rvList);
+        RecyclerView rv = findViewById(R.id.rv);
         UsersAdapter listAdapter = new UsersAdapter(this, userList);
         LinearLayoutManager mlm = new LinearLayoutManager(this);
 
