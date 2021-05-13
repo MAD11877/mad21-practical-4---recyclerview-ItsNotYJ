@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         TextView desc = findViewById(R.id.user_description);
         desc.setText(currentUser.description);
 
-        Button fllw_btn = findViewById(R.id.follow_btn);
+        Button fllw_btn = findViewById(R.id.btnFollow);
 
         fllw_btn.setOnClickListener(new View.OnClickListener() {
             @Override

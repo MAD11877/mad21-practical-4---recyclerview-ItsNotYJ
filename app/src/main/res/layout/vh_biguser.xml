@@ -14,11 +14,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:text="Description..."
-        app:layout_constraintStart_toEndOf="@+id/userIconList"
+        app:layout_constraintStart_toEndOf="@+id/img_profile"
         app:layout_constraintTop_toBottomOf="@+id/userNameList" />
 
     <ImageView
-        android:id="@+id/userIconList"
+        android:id="@+id/img_profile"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="24dp"
@@ -48,7 +48,7 @@
         android:layout_marginTop="24dp"
         android:text="Name..."
         android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/userIconList"
+        app:layout_constraintStart_toEndOf="@+id/img_profile"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
