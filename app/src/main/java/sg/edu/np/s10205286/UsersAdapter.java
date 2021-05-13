@@ -31,7 +31,13 @@ public class UsersAdapter extends RecyclerView.Adapter<UserViewHolder> {
     @NonNull
     @Override
     public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View item = LayoutInflater.from(parent.getContext()).inflate(R.layout.vh_user, parent, false);
+        View item = null;
+
+        if (viewType == 0) { // If last character is 7, viewType = 0
+            item = LayoutInflater.from(parent.getContext()).inflate(R.layout.vh_biguser, parent, false);
+        }
+        else
+            item = LayoutInflater.from(parent.getContext()).inflate(R.layout.vh_user, parent, false);
 
         return new UserViewHolder(item);
     }
@@ -39,13 +45,9 @@ public class UsersAdapter extends RecyclerView.Adapter<UserViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
         User u = data.get(position);
+
         holder.uName.setText(u.getName());
         holder.description.setText(u.getDescription());
-
-        // Continue tmr, rewatch the lesson about different ItemViews
-        if(u.name.substring(u.name.length() - 1) == "7"){
-
-        }
 
         holder.image.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -75,5 +77,14 @@ public class UsersAdapter extends RecyclerView.Adapter<UserViewHolder> {
     @Override
     public int getItemCount() {
         return data.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        User u = data.get(position);
+
+        if (u.name.endsWith("7"))
+            return 0;
+        return 1;
     }
 }
